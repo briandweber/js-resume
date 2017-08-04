@@ -30,7 +30,7 @@ var education = {
     {
       "name": "University of Nebraska",
       "location": "Lincoln",
-      "degree": "Bachelor's of Arts"
+      "degree": "Bachelor's of Arts",
       "majors": ["Economics"],
       "dates": "June/2011 - May/2013",
       "url": "https://www.unl.edu",
@@ -38,10 +38,12 @@ var education = {
     }
   ],
   "onlineCourses": [
-    "title": "Front-End Web Developer Degree",
-    "school": "Udacity",
-    "dates": "July/2017 - August/2017",
-    "url": "https://www.udacity.com"
+    {
+      "title": "Front-End Web Developer Degree",
+      "school": "Udacity",
+      "dates": "July/2017 - August/2017",
+      "url": "https://www.udacity.com"
+    }
   ],
   "display": function(){}
 }
