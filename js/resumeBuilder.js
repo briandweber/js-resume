@@ -133,6 +133,8 @@ var projects = {
 }
 projects.display();
 
+$("#mapDiv").append(googleMap);
+
 if (bio.skills.length > 0){
   $("#header").append(HTMLskillsStart);
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0])
@@ -142,6 +144,8 @@ if (bio.skills.length > 0){
   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
   $("#skills").append(formattedSkill);
 }
+
+
 
 // $("#main").append(internationalizeButton);
 // function inName(name){
