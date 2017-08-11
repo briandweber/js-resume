@@ -79,7 +79,7 @@ var education = {
       $(".education-entry").append(formattedOnlineURL);
     }
   }
-}
+};
 education.display();
 
 var work = {
@@ -131,14 +131,14 @@ var projects = {
     }
   }
   //Link to deployed app - https://hidden-everglades-42703.herokuapp.com/
-}
+};
 projects.display();
 
 $("#mapDiv").append(googleMap);
 
 if (bio.skills.length > 0){
   $("#header").append(HTMLskillsStart);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0])
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
   $("#skills").append(formattedSkill);
   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
   $("#skills").append(formattedSkill);
