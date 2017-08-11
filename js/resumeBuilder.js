@@ -1,10 +1,6 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-var formattedName = HTMLheaderName.replace("%data%", "Brian Weber");
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
 
 var bio = {
   "name": formattedName,
@@ -35,6 +31,11 @@ var bio = {
   }
 };
 bio.display();
+
+var formattedName = HTMLheaderName.replace("%data%", "Brian Weber");
+var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 
 var education = {
   "schools": [
@@ -144,6 +145,17 @@ if (bio.skills.length > 0){
   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
   $("#skills").append(formattedSkill);
 }
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#footerContacts").append(formattedMobile);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedLocation);
+
 
 
 
