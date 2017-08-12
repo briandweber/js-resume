@@ -3,8 +3,8 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 var bio = {
-  "name": formattedName,
-  "role": formattedRole,
+  "name": "Brian Weber",
+  "role": "Web Developer",
   "contacts": {
     "mobile": "402-304-5267",
     "email": "briandweber@gmail.com",
@@ -12,11 +12,15 @@ var bio = {
     "twitter": "@briandweber",
     "location": "Phoenix"
   },
-  "welcomeMessage": "It's howdy doody time",
+  "welcomeMessage": "Great Scott!! It's howdy doody time!!  -Doc Brown",
   "skills": ["HTML", "CSS", "Javascript"],
   "biopic": "images/bdwPicture.jpeg",
   "display": function(){
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
     $("#header").prepend(formattedPic);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
@@ -31,11 +35,6 @@ var bio = {
   }
 };
 bio.display();
-
-var formattedName = HTMLheaderName.replace("%data%", "Brian Weber");
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
 
 var education = {
   "schools": [
@@ -114,7 +113,7 @@ var projects = {
       "title": "YelpCamp",
       "dates": "2017",
       "description": "A list of campsites for users to browse/comment.  Also allows users to post campsites.",
-      "images": ["images/ycImages/yelpcamp1.png"]
+      "images": ["images/ycImages/yelpcamp1.png", "images/ycImages/yelpcamp2.png"]
     }
   ],
   "display": function(){
@@ -126,8 +125,10 @@ var projects = {
       $(".project-entry").append(formattedProjectDates);
       var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
       $(".project-entry").append(formattedProjectDescription);
-      var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images);
-      $(".project-entry").append(formattedProjectImages);
+      for (var k = 0; k < projects.projects[i].images.length; k++){
+        var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[k]);
+        $(".project-entry").append(formattedProjectImages);
+      }
     }
   }
   //Link to deployed app - https://hidden-everglades-42703.herokuapp.com/
