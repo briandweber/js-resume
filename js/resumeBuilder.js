@@ -1,7 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
 var bio = {
   "name": "Brian Weber",
   "role": "Web Developer",
@@ -156,13 +152,3 @@ $("#footerContacts").append(formattedEmail);
 $("#footerContacts").append(formattedTwitter);
 $("#footerContacts").append(formattedGithub);
 $("#footerContacts").append(formattedLocation);
-
-
-
-
-// $("#main").append(internationalizeButton);
-// function inName(name){
-//   var arr = name.split(" ");
-//   var lastName = arr[1].toUpperCase();
-//   return arr[0] + " " + lastName;
-// }
