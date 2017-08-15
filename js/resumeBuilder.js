@@ -28,6 +28,24 @@ var bio = {
     $("#topContacts").append(formattedGithub);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
+    if (bio.skills.length > 0){
+      $("#header").append(HTMLskillsStart);
+      for (var h = 0; h < bio.skills.length; h++){
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[h]);
+        $("#skills").append(formattedSkill);
+      }
+    }
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#footerContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedLocation);
+
   }
 };
 bio.display();
@@ -85,11 +103,18 @@ var work = {
         "location": "Lincoln",
         "dates": "July 2007 - Present",
         "description": "Responsibilities include working closely with physicians and office/business manager for overall management of clinic’s patient record keeping system in order to facilitate the efficient and thorough medical treatment of patients."
+      },
+      {
+        "employer": "Lincoln Family Medical Group",
+        "title": "Medical Records Supervisor - Duplicate for Testing",
+        "location": "Lincoln",
+        "dates": "July 2007 - Present",
+        "description": "Responsibilities include working closely with physicians and office/business manager for overall management of clinic’s patient record keeping system in order to facilitate the efficient and thorough medical treatment of patients."
       }
   ],
   "display": function(){
+    $("#workExperience").append(HTMLworkStart);
     for (var i = 0; i < work.jobs.length; i++){
-      $("#workExperience").append(HTMLworkStart);
       var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
       var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
       var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -132,23 +157,3 @@ var projects = {
 projects.display();
 
 $("#mapDiv").append(googleMap);
-
-if (bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-}
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#footerContacts").append(formattedMobile);
-$("#footerContacts").append(formattedEmail);
-$("#footerContacts").append(formattedTwitter);
-$("#footerContacts").append(formattedGithub);
-$("#footerContacts").append(formattedLocation);
